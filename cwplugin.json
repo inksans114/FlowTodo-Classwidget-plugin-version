@@ -1,7 +1,7 @@
 {
   "id": "FlowTodo",
   "name": "FlowTodo FluentUI",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "api_version": "*",
   "entry": "flowtodo_launcher.py",
   "author": "inksans114",
