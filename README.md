@@ -63,14 +63,26 @@ FlowTodo_RinUI/
   - RinUI：MIT License，见 `vendor/LICENSE`（Copyright (c) 2025 RinLit）。
   - Class Widgets 2 设计参考：MIT License，见 `CLASS_WIDGETS_2_LICENSE.txt`。
 
+## 更新日志 / Changelog
+
+### v1.0.2（2026-08-18）
+
+- **修复插件安装后 FlowTodo 不启动的问题**：旧版 launcher 尝试用插件目录下的 Python 环境启动 `app.py`，但插件包内不包含 `.venv`，回退到系统 `pythonw` 又缺少 PySide6，导致进程静默秒退。
+- 新版 launcher 优先使用 FlowTodo 项目目录自带的 `.venv`（依赖齐全）启动 `app.py`，找不到项目目录时才回退插件目录；防重启动检测同时匹配项目目录与插件目录两种来源，避免重复拉起。
+- 该修复已在本地 CW2 环境验证：插件加载后 FlowTodo 正常启动并保持存活。
+
+### v1.0.1（2026-08-18）
+
+- 首次接入 Class Widgets 2 插件广场自动发布流程，打包发布 `com.flowtodo.plugin`。
+
 ## 自动发布 / Auto Release
 
 本仓库已接入 Class Widgets 2 插件官方发布流程（GitHub Actions），推送 `v*.*.*` 格式的 tag 时自动完成打包与发布：
 
 1. 推送 tag：
 ```bash
-git tag v1.0.1
-git push origin v1.0.1
+git tag v1.0.2
+git push origin v1.0.2
 ```
 
 2. 在仓库 Settings → Secrets and variables → Actions 中配置 `CWPT_TOKEN`（从 [插件广场控制台](https://plaza.cw.rinlit.cn/console) 获取的发布令牌）
