@@ -1,5 +1,5 @@
 {
-  "id": "FlowTodo",
+  "id": "com.flowtodo.plugin",
   "name": "FlowTodo FluentUI",
   "version": "1.0.1",
   "api_version": "*",
