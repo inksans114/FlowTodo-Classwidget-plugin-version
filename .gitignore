@@ -40,3 +40,7 @@ RinUI/config/
 .DS_Store
 Thumbs.db
 desktop.ini
+
+# ===== 插件打包产物（由 Actions 构建，不入库） =====
+*.cwplugin
+*.zip

@@ -62,3 +62,20 @@ FlowTodo_RinUI/
 - 第三方组件：
   - RinUI：MIT License，见 `vendor/LICENSE`（Copyright (c) 2025 RinLit）。
   - Class Widgets 2 设计参考：MIT License，见 `CLASS_WIDGETS_2_LICENSE.txt`。
+
+## 自动发布 / Auto Release
+
+本仓库已接入 Class Widgets 2 插件官方发布流程（GitHub Actions），推送 `v*.*.*` 格式的 tag 时自动完成打包与发布：
+
+1. 推送 tag：
+```bash
+git tag v1.0.1
+git push origin v1.0.1
+```
+
+2. 在仓库 Settings → Secrets and variables → Actions 中配置 `CWPT_TOKEN`（从 [插件广场控制台](https://plaza.cw.rinlit.cn/console) 获取的发布令牌）
+
+3. GitHub Actions 会自动：
+   - 使用 `cw-plugin-pack` 打包插件，生成 `.cwplugin` 和 `.zip` 两种格式
+   - 通过 `cw-plugin-publish` 自动发布到插件广场
+   - 生成 changelog 并创建 GitHub Release 上传发布包

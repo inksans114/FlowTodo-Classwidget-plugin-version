@@ -4,5 +4,9 @@
   "version": "1.0.0",
   "api_version": "*",
   "entry": "flowtodo_launcher.py",
-  "author": "inksans114"
+  "author": "inksans114",
+  "description": "FluentUI 风格的待办事项与专注计时插件，支持桌面小组件、灵动岛与任务/项目管理",
+  "url": "https://github.com/inksans114/FlowTodo-Classwidget-plugin-version",
+  "readme": "README.md",
+  "icon": "icon.png"
 }
